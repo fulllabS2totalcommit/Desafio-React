@@ -29,7 +29,37 @@ class App extends Component {
           "city": "Rio de Janeiro",
           "zipcode": "99999-999",
           "phone": "(99)99999-9999"
-          }
+          },
+          {
+            "id": 3,
+            "name": "Leandro moreira",
+            "email": "lmoreira@gmail.com",
+            "street": "Av. Campos dos afonsos, 8999",
+            "suite": "Casa F",
+            "city": "Rio de Janeiro",
+            "zipcode": "99999-999",
+            "phone": "(99)99999-8888"
+            },
+            {
+              "id": 4,
+              "name": "Maria Clara",
+              "email": "clarinhafantastica@gmail.com",
+              "street": "Av. das Américas, 777",
+              "suite": "Apto 777",
+              "city": "Rio de Janeiro",
+              "zipcode": "77777-8899",
+              "phone": "(99)99999-9999"
+              },
+              {
+                "id": 5,
+                "name": "Geovana Luiza",
+                "email": "ggluiza@gmail.com",
+                "street": "Av. Campos dos Afonsos, 1010",
+                "suite": "Apto 409",
+                "city": "Rio de Janeiro",
+                "zipcode": "99999-999",
+                "phone": "(99)99999-9999"
+                }
     ],
   }
 
