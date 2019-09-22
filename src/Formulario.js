@@ -17,12 +17,6 @@ class Formulario extends Component {
             {
                 campo: 'email',
                 metodo: 'isEmpty',
-                validoQuando: true,
-                mensagem: 'Entre com um e-mail valido'
-              },
-              {
-                campo: 'email',
-                metodo: 'isEmpty',
                 validoQuando: false,
                 mensagem: 'Entre com um e-mail valido'
               },
