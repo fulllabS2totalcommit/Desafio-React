@@ -1,6 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Foram utilizadas as Bibiotecas:
 
-## Available Scripts
+    "materialize-css": "^1.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.0",
+    "validator": "^10.11.0"
+
+## Scripts
+
+Install Modulos node.js
+
+### `npm install`
 
 In the project directory, you can run:
 
