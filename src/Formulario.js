@@ -57,7 +57,6 @@ class Formulario extends Component {
             console.log(this.atualizar);
 
             if(this.atualizar){
-                console.log('Entrou AQUI');
                 document.getElementsByClassName("id")[this.indice].innerHTML = this.state.id;
                 document.getElementsByClassName("name")[this.indice].innerHTML = this.state.name;
                 document.getElementsByClassName("email")[this.indice].innerHTML = this.state.email;
