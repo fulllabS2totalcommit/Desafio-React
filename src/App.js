@@ -87,11 +87,13 @@ class App extends Component {
     document.getElementById("city").value = usuarios[index].city;
     document.getElementById("zipcode").value = usuarios[index].zipcode;
     document.getElementById("phone").value = usuarios[index].phone;
+
   }
 
   escutadorDeSubmit = autor => {
     this.setState({ usuarios: [...this.state.usuarios, autor] });
   }
+  
   render() {
     return (
       <Fragment>

@@ -30,6 +30,7 @@ class Formulario extends Component {
           ]);
 
           this.stateInicial = {
+
             id: '',
             name: '',
             email: '',
@@ -44,7 +45,8 @@ class Formulario extends Component {
         this.state = this.stateInicial;
     }
 
-    submitFormulario = () => {
+    submitFormulario = (index) => {
+
         const validacao = this.validador.valida(this.state);
         if(validacao.isValid){
             this.props.escutadorDeSubmit(this.state);
@@ -60,20 +62,51 @@ class Formulario extends Component {
                 PopUp.exibeMensagem('error', campo.message);
             });
         }
-        
-        
 
     }
-
 
     escutadorDeInput = event => {
-        const { name, value } = event.target;
+        let campo = event.target.name;
 
-        this.setState({
-            [name]: value
-        });
+        if(campo === 'email'){
+            this.setState({
+                email: event.target.value,
+                id: document.getElementById("id").value,
+                name: document.getElementById("name").value,
+                street: document.getElementById("street").value,
+                suite: document.getElementById("suite").value,
+                city: document.getElementById("city").value,
+                zipcode: document.getElementById("zipcode").value,
+                phone: document.getElementById("phone").value,
+            });
+        }
+        
+        if(campo === 'id'){
+            this.setState({
+                id: event.target.value,
+                email: document.getElementById("email").value,
+                name: document.getElementById("name").value,
+                street: document.getElementById("street").value,
+                suite: document.getElementById("suite").value,
+                city: document.getElementById("city").value,
+                zipcode: document.getElementById("zipcode").value,
+                phone: document.getElementById("phone").value,
+            });
+        }
+
+        if(campo === 'name'){
+            this.setState({
+                name: event.target.value,
+                id: document.getElementById("id").value,
+                email: document.getElementById("email").value,
+                street: document.getElementById("street").value,
+                suite: document.getElementById("suite").value,
+                city: document.getElementById("city").value,
+                zipcode: document.getElementById("zipcode").value,
+                phone: document.getElementById("phone").value,
+            });
+        }
     }
-
 
     render() {
         const { id, name, email, street, suite, city, zipcode, phone } = this.state;
