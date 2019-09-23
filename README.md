@@ -8,7 +8,7 @@ Foram utilizadas as Bibiotecas:
 
 ## Scripts
 
-Install Modulos node.js
+Install node modules node.js
 
 ### `npm install`
 
