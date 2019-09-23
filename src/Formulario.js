@@ -66,46 +66,12 @@ class Formulario extends Component {
     }
 
     escutadorDeInput = event => {
-        let campo = event.target.name;
+        console.log(event.target);
+        const { name, value } = event.target;
 
-        if(campo === 'email'){
-            this.setState({
-                email: event.target.value,
-                id: document.getElementById("id").value,
-                name: document.getElementById("name").value,
-                street: document.getElementById("street").value,
-                suite: document.getElementById("suite").value,
-                city: document.getElementById("city").value,
-                zipcode: document.getElementById("zipcode").value,
-                phone: document.getElementById("phone").value,
-            });
-        }
-        
-        if(campo === 'id'){
-            this.setState({
-                id: event.target.value,
-                email: document.getElementById("email").value,
-                name: document.getElementById("name").value,
-                street: document.getElementById("street").value,
-                suite: document.getElementById("suite").value,
-                city: document.getElementById("city").value,
-                zipcode: document.getElementById("zipcode").value,
-                phone: document.getElementById("phone").value,
-            });
-        }
-
-        if(campo === 'name'){
-            this.setState({
-                name: event.target.value,
-                id: document.getElementById("id").value,
-                email: document.getElementById("email").value,
-                street: document.getElementById("street").value,
-                suite: document.getElementById("suite").value,
-                city: document.getElementById("city").value,
-                zipcode: document.getElementById("zipcode").value,
-                phone: document.getElementById("phone").value,
-            });
-        }
+        this.setState({
+            [name]: value
+        });
     }
 
     render() {
