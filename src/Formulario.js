@@ -43,14 +43,33 @@ class Formulario extends Component {
         }
 
         this.state = this.stateInicial;
+
+        this.idAnterior = null;
+        this.indice = null;
+        this.atualizar = false;
     }
 
     submitFormulario = (index) => {
 
         const validacao = this.validador.valida(this.state);
+        
         if(validacao.isValid){
-            this.props.escutadorDeSubmit(this.state);
-            this.setState(this.stateInicial);
+            console.log(this.atualizar);
+
+            if(this.atualizar){
+                console.log('Entrou AQUI');
+                document.getElementsByClassName("id")[this.indice].innerHTML = this.state.id;
+                document.getElementsByClassName("name")[this.indice].innerHTML = this.state.name;
+                document.getElementsByClassName("email")[this.indice].innerHTML = this.state.email;
+                document.getElementsByClassName("street")[this.indice].innerHTML = this.state.street;
+                document.getElementsByClassName("suite")[this.indice].innerHTML = this.state.suite;
+                document.getElementsByClassName("city")[this.indice].innerHTML = this.state.city;
+                document.getElementsByClassName("zipcode")[this.indice].innerHTML = this.state.zipcode;
+                document.getElementsByClassName("phone")[this.indice].innerHTML = this.state.phone;    
+            }else{
+                this.props.escutadorDeSubmit(this.state);
+                this.setState(this.stateInicial);
+            }
         }else {
             const { id, name, email} = validacao;
             const campos = [id, name, email];
@@ -58,15 +77,22 @@ class Formulario extends Component {
                 return elem.isInvalid
             });
             camposInvalidos.forEach(campo => {
-                
                 PopUp.exibeMensagem('error', campo.message);
             });
         }
+
+        this.atualizar = false;
 
     }
 
     escutadorDeInput = event => {
         console.log(event.target);
+
+        this.idAnterior = document.getElementById("id").value;
+        this.indice = document.getElementById("indice").value;
+        this.atualizar = document.getElementById("atualiza").value;
+
+        console.log(this.idAnterior == null);
 
         this.setState({
             email: document.getElementById("email").value,
@@ -85,6 +111,8 @@ class Formulario extends Component {
         return (
             <form id="formUsuario">
                 <div className="row">
+                <input type="hidden" id="indice" />
+                <input type="hidden" id="atualiza" />
                 <div className="input-field col s4">
                         <label className="input-field" htmlFor="nome">Id</label>
                         <input

@@ -81,6 +81,8 @@ class App extends Component {
 
     console.log(index);
 
+    document.getElementById("atualiza").value = true;
+    document.getElementById("indice").value = index;
     document.getElementById("id").value = usuarios[index].id;
     document.getElementById("name").value = usuarios[index].name;
     document.getElementById("email").value = usuarios[index].email;

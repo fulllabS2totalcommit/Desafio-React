@@ -22,15 +22,15 @@ const TableBody = props =>{
     
     const linhas = props.usuarios.map((linha, index)=> {
        return( 
-       <tr key={index}>
-            <td>{linha.id}</td>
-            <td>{linha.name}</td>
-            <td>{linha.email}</td>
-            <td key={index}>{linha.street}</td>
-            <td key={index}>{linha.suite}</td>
-            <td key={index}>{linha.city}</td>
-            <td key={index}>{linha.zipcode}</td>
-            <td>{linha.phone}</td>
+       <tr  key={index}>
+            <td class="id">{linha.id}</td>
+            <td class="name">{linha.name}</td>
+            <td class="email">{linha.email}</td>
+            <td class="street" key={index}>{linha.street}</td>
+            <td class="suite" key={index}>{linha.suite}</td>
+            <td class="city" key={index}>{linha.city}</td>
+            <td class="zipcode" key={index}>{linha.zipcode}</td>
+            <td class="phone">{linha.phone}</td>
             <td><button onClick={ () => props.removeAutor(index)} className="waves-effect waves-light indigo lighten-2 btn">Remover</button></td>
             <td><button onClick={ () => props.atualizaUsuario(index)} className="waves-effect waves-light indigo lighten-2 btn">Editar</button></td>
         </tr>
