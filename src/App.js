@@ -79,6 +79,8 @@ class App extends Component {
 
     const { usuarios } = this.state;
 
+    console.log(index);
+
     document.getElementById("id").value = usuarios[index].id;
     document.getElementById("name").value = usuarios[index].name;
     document.getElementById("email").value = usuarios[index].email;

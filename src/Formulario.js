@@ -67,10 +67,16 @@ class Formulario extends Component {
 
     escutadorDeInput = event => {
         console.log(event.target);
-        const { name, value } = event.target;
 
         this.setState({
-            [name]: value
+            email: document.getElementById("email").value,
+            id: document.getElementById("id").value,
+            name: document.getElementById("name").value,
+            street: document.getElementById("street").value,
+            suite: document.getElementById("suite").value,
+            city: document.getElementById("city").value,
+            zipcode: document.getElementById("zipcode").value,
+            phone: document.getElementById("phone").value,
         });
     }
 
